@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <addon id="plugin.video.example"
 version="2.0.1"
-name="Example Kodi Video Plugin"
-provider-name="Roman_V_M">
+name="Werder.TV"
+provider-name="NaZo">
 <requires>
   <import addon="xbmc.python" version="2.24.0"/>
 </requires>
@@ -10,7 +10,7 @@ provider-name="Roman_V_M">
   <provides>video</provides>
 </extension>
 <extension point="xbmc.addon.metadata">
-  <summary lang="en">Example Kodi Video Plugin</summary>
+  <summary lang="en">Werder.TV Video Plugin</summary>
   <description lang="en">An example video plugin for Kodi mediacenter.</description>
   <disclaimer lang="en">Free sample videos are provided by www.vidsplay.com.</disclaimer>
 </extension>
