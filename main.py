@@ -70,7 +70,15 @@ def get_categories():
 
     :return: list
     """
-    return VIDEOS.keys()
+    url = 'http://www.werder.de/api/rest/tag/group/list'
+    file = urllib.urlopen(url)
+    results = json.load(file)
+    
+    groups = {'0': 'Neueste Videos'}
+    for group in results:
+        groups[group['id']] = group['titleDe']
+            
+    return groups
 
 
 def get_videos():
@@ -114,24 +122,18 @@ def list_categories():
     # Create a list for our items.
     listing = []
     # Iterate through categories
-    for category in categories:
+    for id, name in categories.iteritems():
         # Create a list item with a text label and a thumbnail image.
-        list_item = xbmcgui.ListItem(label=category)
-        # Set graphics (thumbnail, fanart, banner, poster, landscape etc.) for the list item.
-        # Here we use the same image for all items for simplicity's sake.
-        # In a real-life plugin you need to set each image accordingly.
-        list_item.setArt({'thumb': VIDEOS[category][0]['thumb'],
-                          'icon': VIDEOS[category][0]['thumb'],
-                          'fanart': VIDEOS[category][0]['fanart']})
+        list_item = xbmcgui.ListItem(label=name)
         # Set additional info for the list item.
         # Here we use a category name for both properties for for simplicity's sake.
         # setInfo allows to set various information for an item.
         # For available properties see the following link:
         # http://mirrors.xbmc.org/docs/python-docs/15.x-isengard/xbmcgui.html#ListItem-setInfo
-        list_item.setInfo('video', {'title': category, 'genre': category})
+        list_item.setInfo('video', {'title': name})
         # Create a URL for the plugin recursive callback.
         # Example: plugin://plugin.video.example/?action=listing&category=Animals
-        url = '{0}?action=listing&category={1}'.format(_url, category)
+        url = '{0}?action=listing&category={1}'.format(_url, id)
         # is_folder = True means that this item opens a sub-list of lower level items.
         is_folder = True
         # Add our item to the listing as a 3-element tuple.
