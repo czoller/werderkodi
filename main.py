@@ -8,6 +8,8 @@ import sys
 from urlparse import parse_qsl
 import xbmcgui
 import xbmcplugin
+import urllib
+import json
 
 # Get the plugin url in plugin:// notation.
 _url = sys.argv[0]
@@ -71,7 +73,7 @@ def get_categories():
     return VIDEOS.keys()
 
 
-def get_videos(category):
+def get_videos():
     """
     Get the list of videofiles/streams.
     Here you can insert some parsing code that retrieves
@@ -80,7 +82,27 @@ def get_videos(category):
     :param category: str
     :return: list
     """
-    return VIDEOS[category]
+    win = xbmcgui.Window()
+    width = win.getWidth()
+    height = win.getHeight()
+    limit = 64
+    
+    url = 'http://www.werder.de/api/rest/video/list/compact?limit=' + str(limit)  + '&orderBy=publishDateTime&orderByDesc=true&page=1&strict=true'
+    file = urllib.urlopen(url)
+    results = json.load(file)
+    
+    videos = []
+    for item in results['items']:
+        name = item['title']
+        thumb = 'http://www.werder.de/?eID=crop&width=400&height=300&file=' + item['image'].lstrip('/')
+        fanart = 'http://www.werder.de/?eID=crop&width=' + str(width) + '&height=' + str(height) + '&file=' + item['image'].lstrip('/')
+        page = 'http://www.werder.de' + item['videoInformation']['detailPage']
+        genre = item['videoInformation']['primaryTag']
+        date = item['publishDateTime']
+        description = item['description']
+        videos.append({'name': name, 'thumb': thumb, 'fanart': fanart, 'page': page, 'genre': genre, 'date': date, 'description': description})
+
+    return videos
 
 
 def list_categories():
@@ -100,7 +122,7 @@ def list_categories():
         # In a real-life plugin you need to set each image accordingly.
         list_item.setArt({'thumb': VIDEOS[category][0]['thumb'],
                           'icon': VIDEOS[category][0]['thumb'],
-                          'fanart': VIDEOS[category][0]['thumb']})
+                          'fanart': VIDEOS[category][0]['fanart']})
         # Set additional info for the list item.
         # Here we use a category name for both properties for for simplicity's sake.
         # setInfo allows to set various information for an item.
@@ -124,14 +146,14 @@ def list_categories():
     xbmcplugin.endOfDirectory(_handle)
 
 
-def list_videos(category):
+def list_videos():
     """
     Create the list of playable videos in the Kodi interface.
 
     :param category: str
     """
     # Get the list of videos in the category.
-    videos = get_videos(category)
+    videos = get_videos()
     # Create a list for our items.
     listing = []
     # Iterate through videos.
@@ -139,17 +161,17 @@ def list_videos(category):
         # Create a list item with a text label and a thumbnail image.
         list_item = xbmcgui.ListItem(label=video['name'])
         # Set additional info for the list item.
-        list_item.setInfo('video', {'title': video['name'], 'genre': video['genre']})
+        list_item.setInfo('video', {'title': video['name'], 'genre': video['genre'], 'date': video['date'], 'plot': video['description'], 'plotoutline': video['description']})
         # Set graphics (thumbnail, fanart, banner, poster, landscape etc.) for the list item.
         # Here we use the same image for all items for simplicity's sake.
         # In a real-life plugin you need to set each image accordingly.
-        list_item.setArt({'thumb': video['thumb'], 'icon': video['thumb'], 'fanart': video['thumb']})
+        list_item.setArt({'thumb': video['thumb'], 'icon': video['thumb'], 'fanart': video['fanart']})
         # Set 'IsPlayable' property to 'true'.
         # This is mandatory for playable items!
         list_item.setProperty('IsPlayable', 'true')
         # Create a URL for the plugin recursive callback.
         # Example: plugin://plugin.video.example/?action=play&video=http://www.vidsplay.com/vids/crab.mp4
-        url = '{0}?action=play&video={1}'.format(_url, video['video'])
+        url = 'plugin://plugin.program.chrome.launcher/?url=' + video['page'] + '&mode=showSite&stopPlayback=no'
         # Add the list item to a virtual Kodi folder.
         # is_folder = False means that this item won't open any sub-list.
         is_folder = False
@@ -191,14 +213,14 @@ def router(paramstring):
     if params:
         if params['action'] == 'listing':
             # Display the list of videos in a provided category.
-            list_videos(params['category'])
+            list_videos()
         elif params['action'] == 'play':
             # Play a video from a provided URL.
             play_video(params['video'])
     else:
         # If the plugin is called from Kodi UI without any parameters,
         # display the list of video categories
-        list_categories()
+        list_videos()
 
 
 if __name__ == '__main__':
