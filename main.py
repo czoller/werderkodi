@@ -8,6 +8,7 @@ import xbmcgui
 import xbmcplugin
 import urllib
 import json
+from pkg_resources._vendor.pyparsing import empty
 
 _URL = sys.argv[0]
 _HANDLE = int(sys.argv[1])
@@ -42,9 +43,11 @@ class WerderVideo(object):
 class WerderGroup(object):
     
     def __init__(self, json):
-        self.id = json['id']
+        self.id = int(json['id'])
         self.title = json['titleDe']
-        #TODO tags
+        self.tags = []
+        for tag in json['tags']:
+            self.tags.append(WerderTag(tag))
     
     def toListItem(self):
         listItem = xbmcgui.ListItem(label=self.title)
@@ -54,6 +57,24 @@ class WerderGroup(object):
         return (url, listItem, True)
     
     
+class WerderTag(object):
+    
+    def __init__(self, json):
+        self.id = int(json['id'])
+        self.title = json['titleDe']
+    
+    def toListItem(self):
+        listItem = xbmcgui.ListItem(label=self.title)
+        listItem.setInfo('video', {'title': self.title})
+        url = _URL + '?show=tag&tag=' + str(self.id)
+        
+        return (url, listItem, True)
+    
+    
+def toListItem(werderObject):
+    return werderObject.toListItem()
+
+
 def loadVideoList(tagId = 0, limit = 0):
     
     tagParam = 'tagList=' + str(tagId) if tagId > 0 else ''
@@ -65,9 +86,10 @@ def loadVideoList(tagId = 0, limit = 0):
     
     listItems = []
     for item in results['items']:
-        listItems.append(WerderVideo(item).toListItem())
+        listItems.append(WerderVideo(item))
 
     return listItems
+    
     
 def loadGroupList():
     
@@ -75,9 +97,11 @@ def loadGroupList():
     file = urllib.urlopen(url)
     results = json.load(file)
     
-    listItems = []
+    listItems = dict()
     for group in results:
-        listItems.append(WerderGroup(group).toListItem())
+        group = WerderGroup(group)
+        if group.tags:
+            listItems[group.id] = group
 
     return listItems
 
@@ -88,7 +112,7 @@ def listLatestVideos():
     archiveItem.setInfo('video', {'title': 'Archiv'})
     archiveUrl = _URL + '?show=archive'
     
-    listing = [(archiveUrl, archiveItem, True)] + loadVideoList(0, 20)
+    listing = [(archiveUrl, archiveItem, True)] + map(toListItem, loadVideoList(0, 20))
     xbmcplugin.addDirectoryItems(_HANDLE, listing, len(listing))
     xbmcplugin.addSortMethod(_HANDLE, xbmcplugin.SORT_METHOD_DATEADDED)
     xbmcplugin.addSortMethod(_HANDLE, xbmcplugin.SORT_METHOD_LABEL)
@@ -97,10 +121,21 @@ def listLatestVideos():
 
 def listGroups():
     
-    listing = loadGroupList()
+    listing = map(toListItem, loadGroupList().values())
     xbmcplugin.addDirectoryItems(_HANDLE, listing, len(listing))
     xbmcplugin.addSortMethod(_HANDLE, xbmcplugin.SORT_METHOD_LABEL)
     xbmcplugin.endOfDirectory(_HANDLE)
+
+
+def listTags(groupId):
+    
+    groups = loadGroupList()
+    if groupId in groups:
+        tags = groups[groupId].tags
+        listing = map(toListItem, tags)
+        xbmcplugin.addDirectoryItems(_HANDLE, listing, len(listing))
+        xbmcplugin.addSortMethod(_HANDLE, xbmcplugin.SORT_METHOD_LABEL)
+        xbmcplugin.endOfDirectory(_HANDLE)
 
 
 def showVideo(path):
@@ -122,8 +157,8 @@ def router(paramstring):
             listLatestVideos()
         elif params['show'] == 'archive':
             listGroups()
-#         elif params['show'] == 'group':
-#             listTags(params['tag'])
+        elif params['show'] == 'group':
+            listTags(int(params['group']))
 #         elif params['show'] == 'tag':
 #             listVideos(params['tag'])
         elif params['show'] == 'play':
