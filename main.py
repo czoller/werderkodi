@@ -138,6 +138,15 @@ def listTags(groupId):
         xbmcplugin.endOfDirectory(_HANDLE)
 
 
+def listVideos(tagId):
+    
+    listing = map(toListItem, loadVideoList(tagId))
+    xbmcplugin.addDirectoryItems(_HANDLE, listing, len(listing))
+    xbmcplugin.addSortMethod(_HANDLE, xbmcplugin.SORT_METHOD_DATEADDED)
+    xbmcplugin.addSortMethod(_HANDLE, xbmcplugin.SORT_METHOD_LABEL)
+    xbmcplugin.endOfDirectory(_HANDLE)
+
+
 def showVideo(path):
 
     play_item = xbmcgui.ListItem(path=path)
@@ -145,22 +154,15 @@ def showVideo(path):
 
 
 def router(paramstring):
-    """
-    Router function that calls other functions
-    depending on the provided paramstring
 
-    :param paramstring:
-    """
     params = dict(parse_qsl(paramstring))
     if params:
-        if params['show'] == 'latest':
-            listLatestVideos()
-        elif params['show'] == 'archive':
+        if params['show'] == 'archive':
             listGroups()
         elif params['show'] == 'group':
             listTags(int(params['group']))
-#         elif params['show'] == 'tag':
-#             listVideos(params['tag'])
+        elif params['show'] == 'tag':
+            listVideos(int(params['tag']))
         elif params['show'] == 'play':
             showVideo(params['video'])
     else:
