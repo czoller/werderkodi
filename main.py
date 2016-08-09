@@ -16,14 +16,14 @@ _WERDER_URL = 'http://www.werder.de'
 
 class WerderVideo(object):
     
-    def __init__(self, title, image, page, primaryTagLabel, description, date):
+    def __init__(self, jsonItem):
 
-        self.title = title
-        self.image = image.lstrip('/')
-        self.page = page
-        self.primaryTagLabel = primaryTagLabel
-        self.description = description
-        self.date = date
+        self.title = jsonItem['title'] 
+        self.image = jsonItem['image'].lstrip('/')
+        self.page = jsonItem['videoInformation']['detailPage']
+        self.primaryTagLabel = jsonItem['videoInformation']['primaryTag']
+        self.description = jsonItem['description']
+        self.date = jsonItem['publishDateTime']
     
     def toListItem(self):
         list_item = xbmcgui.ListItem(label=self.title)
@@ -36,7 +36,7 @@ class WerderVideo(object):
         url = 'plugin://plugin.program.chrome.launcher/?url=' + page + '&mode=showSite&stopPlayback=no'
         
         return (url, list_item, False)
-
+    
 def loadVideoList(tagId = 0, limit = 0):
     
     tagParam = 'tagList=' + str(tagId) if tagId > 0 else ''
@@ -48,17 +48,20 @@ def loadVideoList(tagId = 0, limit = 0):
     
     listItems = []
     for item in results['items']:
-        video = WerderVideo(item['title'], item['image'], item['videoInformation']['detailPage'], item['videoInformation']['primaryTag'], item['description'], item['publishDateTime'])
-        listItems.append(video.toListItem())
+        listItems.append(WerderVideo(item).toListItem())
 
     return listItems
 
 
 def listLatestVideos():
     
-    listing = loadVideoList(0, 20)
+    archiveItem = xbmcgui.ListItem(label='Archiv')
+    archiveItem.setInfo('video', {'title': 'Archiv'})
+    archiveUrl = _URL + '?show=archive'
+    
+    listing = [(archiveUrl, archiveItem, True)] + loadVideoList(0, 20)
     xbmcplugin.addDirectoryItems(_HANDLE, listing, len(listing))
-    xbmcplugin.addSortMethod(_HANDLE, xbmcplugin.SORT_METHOD_DATE)
+    xbmcplugin.addSortMethod(_HANDLE, xbmcplugin.SORT_METHOD_DATEADDED)
     xbmcplugin.endOfDirectory(_HANDLE)
     
 
