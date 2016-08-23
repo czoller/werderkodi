@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<addon id="plugin.video.example"
-version="2.0.1"
+<addon id="plugin.video.werderkodi"
+version="1.0.1"
 name="Werder.TV"
 provider-name="NaZo">
 <requires>
@@ -10,8 +10,8 @@ provider-name="NaZo">
   <provides>video</provides>
 </extension>
 <extension point="xbmc.addon.metadata">
-  <summary lang="en">Werder.TV Video Plugin</summary>
-  <description lang="en">An example video plugin for Kodi mediacenter.</description>
-  <disclaimer lang="en">Free sample videos are provided by www.vidsplay.com.</disclaimer>
+  <summary lang="de">Werder.TV Video Plugin</summary>
+  <description lang="de">Listet Videos von werder.tv und öffnet die entsprechende Webseiten in Chrome.</description>
+  <disclaimer lang="de">Benötigt das ChromeLaunche addon.</disclaimer>
 </extension>
 </addon>
