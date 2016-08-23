@@ -8,7 +8,6 @@ import xbmcgui
 import xbmcplugin
 import urllib
 import json
-from pkg_resources._vendor.pyparsing import empty
 
 _URL = sys.argv[0]
 _HANDLE = int(sys.argv[1])
