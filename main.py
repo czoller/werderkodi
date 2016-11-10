@@ -22,7 +22,7 @@ class WerderVideo(object):
         self.title = json['title'] 
         self.image = json['image'].lstrip('/')
         self.page = json['videoInformation']['detailPage']
-        self.primaryTagLabel = json['videoInformation']['primaryTag']
+        self.primaryTagLabel = json['videoInformation']['primaryTag'] if 'primaryTag' in json['videoInformation'] else ''
         self.description = json['description']
         self.date = json['publishDateTime']
     
