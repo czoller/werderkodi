@@ -104,6 +104,7 @@ def loadVideoList(tagId = 0, limit = 0):
 def loadGroupList():
     
     url = _WERDER_URL + '/api/rest/tag/group/list'
+    xbmc.log('WERDER.TV - groups url: ' + url)
     file = urllib.urlopen(url)
     results = json.load(file)
     
@@ -129,7 +130,8 @@ def listLatestVideos():
     archiveItem.setInfo('video', {'title': 'Archiv'})
     archiveUrl = _URL + '?show=archive'
     
-    listing = [(archiveUrl, archiveItem, True)] + map(toListItem, loadVideoList(0, 20))
+    #listing = [(archiveUrl, archiveItem, True)] + map(toListItem, loadVideoList(0, 20))
+    listing = map(toListItem, loadVideoList(0, 20))
     xbmcplugin.addDirectoryItems(_HANDLE, listing, len(listing))
     xbmcplugin.addSortMethod(_HANDLE, xbmcplugin.SORT_METHOD_DATEADDED)
     xbmcplugin.addSortMethod(_HANDLE, xbmcplugin.SORT_METHOD_LABEL)
@@ -168,7 +170,7 @@ def showVideo(tagList):
 
     xbmc.log('WERDER.TV - tagList: ' + tagList)
     url = loadStreamUrl(tagList)
-    xbmc.log('WERDER.TV - url: ' + url)
+    xbmc.log('WERDER.TV - stream url: ' + url)
 
     #siehe https://github.com/emilsvennesson/script.module.inputstreamhelper
     if _IS_HELPER.check_inputstream():
