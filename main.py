@@ -4,16 +4,21 @@
 
 import sys
 from urlparse import parse_qsl
+import xbmc
 import xbmcgui
 import xbmcplugin
 import urllib
 import json
+import inputstreamhelper
 
 _URL = sys.argv[0]
 _HANDLE = int(sys.argv[1])
 _WIN = xbmcgui.Window()
-_WERDER_URL = 'http://www.werder.de'
-
+_WERDER_URL = 'https://www.werder.de'
+_STREAM_MIME_TYPE = 'application/dash+xml'
+_STREAM_PROTOCOL = 'mpd'
+_STREAM_MANIFEST = '/manifest(format=mpd-time-csf,filter=360-720p)'
+_KODI_VERSION_MAJOR = int(xbmc.getInfoLabel('System.BuildVersion').split('.')[0])
 
 class WerderVideo(object):
     
@@ -25,6 +30,7 @@ class WerderVideo(object):
         self.primaryTagLabel = json['videoInformation']['primaryTag'] if 'primaryTag' in json['videoInformation'] else ''
         self.description = json['description']
         self.date = json['publishDateTime']
+        self.tagList = json['tagList']
     
     def toListItem(self):
         listItem = xbmcgui.ListItem(label=self.title)
@@ -34,7 +40,7 @@ class WerderVideo(object):
         fanart = _WERDER_URL + '/?eID=crop&width=' + str(_WIN.getWidth()) + '&height=' + str(_WIN.getHeight()) + '&file=' + self.image
         listItem.setArt({'thumb': thumb, 'icon': thumb, 'fanart': fanart})
         page = _WERDER_URL + self.page
-        url = 'plugin://plugin.program.chrome.launcher/?url=' + page + '&mode=showSite&stopPlayback=no'
+        url = _URL + '?show=play&tagList=' + self.tagList
         
         return (url, listItem, False)
     
@@ -105,6 +111,13 @@ def loadGroupList():
     return listItems
 
 
+def loadStreamUrl(tagList):
+    url = _WERDER_URL + '/api/rest/video/related/video.json?orderBy=publishDateTime&limit=1&tagList=' + tagList
+    file = urllib.urlopen(url)
+    results = json.load(file)
+    return 'https:' + results[0]['file'] + _STREAM_MANIFEST
+
+
 def listLatestVideos():
     
     archiveItem = xbmcgui.ListItem(label='Archiv')
@@ -146,10 +159,26 @@ def listVideos(tagId):
     xbmcplugin.endOfDirectory(_HANDLE)
 
 
-def showVideo(path):
+def showVideo(tagList):
 
-    play_item = xbmcgui.ListItem(path=path)
-    xbmcplugin.setResolvedUrl(_HANDLE, True, listitem=play_item)
+    xbmc.log('WERDER.TV - tagList: ' + tagList)
+    url = loadStreamUrl(tagList)
+    xbmc.log('WERDER.TV - url: ' + url)
+
+    #siehe https://github.com/emilsvennesson/script.module.inputstreamhelper
+    isHelper = inputstreamhelper.Helper(_STREAM_PROTOCOL)
+    if isHelper.check_inputstream():
+        playItem = xbmcgui.ListItem(path=url)
+        playItem.setContentLookup(False)
+        playItem.setMimeType(_STREAM_MIME_TYPE)
+        playItem.setProperty('inputstream.adaptive.manifest_type', _STREAM_PROTOCOL)
+
+        if _KODI_VERSION_MAJOR >= 19:
+            playItem.setProperty('inputstream', isHelper.inputstream_addon)
+        else:
+            playItem.setProperty('inputstreamaddon', isHelper.inputstream_addon)
+
+        xbmcplugin.setResolvedUrl(_HANDLE, True, playItem)
 
 
 def router(paramstring):
@@ -163,7 +192,7 @@ def router(paramstring):
         elif params['show'] == 'tag':
             listVideos(int(params['tag']))
         elif params['show'] == 'play':
-            showVideo(params['video'])
+            showVideo(params['tagList'])
     else:
         listLatestVideos()
 
