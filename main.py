@@ -19,6 +19,7 @@ _STREAM_MIME_TYPE = 'application/dash+xml'
 _STREAM_PROTOCOL = 'mpd'
 _STREAM_MANIFEST = '/manifest(format=mpd-time-csf,filter=360-720p)'
 _KODI_VERSION_MAJOR = int(xbmc.getInfoLabel('System.BuildVersion').split('.')[0])
+IS_HELPER = inputstreamhelper.Helper(_STREAM_PROTOCOL)
 
 class WerderVideo(object):
     
@@ -166,17 +167,16 @@ def showVideo(tagList):
     xbmc.log('WERDER.TV - url: ' + url)
 
     #siehe https://github.com/emilsvennesson/script.module.inputstreamhelper
-    isHelper = inputstreamhelper.Helper(_STREAM_PROTOCOL)
-    if isHelper.check_inputstream():
+    if IS_HELPER.check_inputstream():
         playItem = xbmcgui.ListItem(path=url)
         playItem.setContentLookup(False)
         playItem.setMimeType(_STREAM_MIME_TYPE)
         playItem.setProperty('inputstream.adaptive.manifest_type', _STREAM_PROTOCOL)
 
         if _KODI_VERSION_MAJOR >= 19:
-            playItem.setProperty('inputstream', isHelper.inputstream_addon)
+            playItem.setProperty('inputstream', IS_HELPER.inputstream_addon)
         else:
-            playItem.setProperty('inputstreamaddon', isHelper.inputstream_addon)
+            playItem.setProperty('inputstreamaddon', IS_HELPER.inputstream_addon)
 
         xbmcplugin.setResolvedUrl(_HANDLE, True, playItem)
 
