@@ -118,10 +118,10 @@ def loadGroupList():
 
 
 def loadStreamUrl(tagList):
-    url = _WERDER_URL + '/api/rest/video/related/video.json?orderBy=publishDateTime&limit=1&tagList=' + tagList
+    url = _WERDER_URL + '/api/rest/video/related/video.json?orderBy=publishDateTime&limit=10&tagList=' + tagList
     file = urllib.urlopen(url)
     results = json.load(file)
-    return 'https:' + results[0]['file'] + _STREAM_MANIFEST
+    return 'https:' + results[-1]['file'] + _STREAM_MANIFEST
 
 
 def listLatestVideos():
@@ -131,7 +131,7 @@ def listLatestVideos():
     archiveUrl = _URL + '?show=archive'
     
     #listing = [(archiveUrl, archiveItem, True)] + map(toListItem, loadVideoList(0, 20))
-    listing = map(toListItem, loadVideoList(0, 20))
+    listing = map(toListItem, loadVideoList(0, 50))
     xbmcplugin.addDirectoryItems(_HANDLE, listing, len(listing))
     xbmcplugin.addSortMethod(_HANDLE, xbmcplugin.SORT_METHOD_DATEADDED)
     xbmcplugin.addSortMethod(_HANDLE, xbmcplugin.SORT_METHOD_LABEL)
