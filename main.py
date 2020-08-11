@@ -85,22 +85,6 @@ class WerderTag(object):
 def toListItem(werderObject):
     return werderObject.toListItem()
 
-
-def loadVideoList(tagId = 0, limit = 0):
-    
-    tagParam = 'tagList=' + str(tagId) if tagId > 0 else ''
-    limitParam = 'limit=' + str(limit) if limit > 0 else ''
-    
-    url = _WERDER_URL + '/api/rest/video/list/compact?' + limitParam  + '&orderBy=publishDateTime&orderByDesc=true&page=1&strict=true' + tagParam
-    file = urllib.urlopen(url)
-    results = json.load(file)
-    
-    listItems = []
-    for item in results['items']:
-        listItems.append(WerderVideo(item))
-
-    return listItems
-    
     
 def loadGroupList():
     
@@ -116,35 +100,6 @@ def loadGroupList():
             listItems[group.id] = group
 
     return listItems
-
-
-def loadStreamUrl(tagList, mediaid):
-    url = _WERDER_URL + '/api/rest/video/related/video.json?orderBy=publishDateTime&limit=10&tagList=' + tagList
-    file = urllib.urlopen(url)
-    results = json.load(file)
-    for s in reversed(results):
-        xbmc.log("s['mediaid']: "  + str(s['mediaid']))
-        if s['mediaid'] == mediaid:
-            return 'https:' + s['file'] + _STREAM_MANIFEST
-    
-    xbmc.log('WERDER.TV - video url: ' + url, xbmc.LOGINFO)
-    xbmc.log('WERDER.TV - video mediaid: ' + str(mediaid), xbmc.LOGINFO)
-    xbmc.log('WERDER.TV - video.json: ' + str(results), xbmc.LOGINFO)
-    return None
-
-
-def listLatestVideos():
-    
-    archiveItem = xbmcgui.ListItem(label='Archiv')
-    archiveItem.setInfo('video', {'title': 'Archiv'})
-    archiveUrl = _URL + '?show=archive'
-    
-    #listing = [(archiveUrl, archiveItem, True)] + map(toListItem, loadVideoList(0, 20))
-    listing = map(toListItem, loadVideoList(0, 50))
-    xbmcplugin.addDirectoryItems(_HANDLE, listing, len(listing))
-    xbmcplugin.addSortMethod(_HANDLE, xbmcplugin.SORT_METHOD_DATEADDED)
-    xbmcplugin.addSortMethod(_HANDLE, xbmcplugin.SORT_METHOD_LABEL)
-    xbmcplugin.endOfDirectory(_HANDLE)
 
 
 def listGroups():
@@ -166,6 +121,36 @@ def listTags(groupId):
         xbmcplugin.endOfDirectory(_HANDLE)
 
 
+def loadVideoList(tagId = 0, limit = 0):
+    
+    tagParam = 'tagList=' + str(tagId) if tagId > 0 else ''
+    limitParam = 'limit=' + str(limit) if limit > 0 else ''
+    
+    url = _WERDER_URL + '/api/rest/video/list/compact?' + limitParam  + '&orderBy=publishDateTime&orderByDesc=true&page=1&strict=true' + tagParam
+    file = urllib.urlopen(url)
+    results = json.load(file)
+    
+    listItems = []
+    for item in results['items']:
+        listItems.append(WerderVideo(item))
+
+    return listItems
+
+
+def listLatestVideos():
+    
+    archiveItem = xbmcgui.ListItem(label='Archiv')
+    archiveItem.setInfo('video', {'title': 'Archiv'})
+    archiveUrl = _URL + '?show=archive'
+    
+    #listing = [(archiveUrl, archiveItem, True)] + map(toListItem, loadVideoList(0, 20))
+    listing = map(toListItem, loadVideoList(0, 50))
+    xbmcplugin.addDirectoryItems(_HANDLE, listing, len(listing))
+    xbmcplugin.addSortMethod(_HANDLE, xbmcplugin.SORT_METHOD_DATEADDED)
+    xbmcplugin.addSortMethod(_HANDLE, xbmcplugin.SORT_METHOD_LABEL)
+    xbmcplugin.endOfDirectory(_HANDLE)
+
+
 def listVideos(tagId):
     
     listing = map(toListItem, loadVideoList(tagId))
@@ -173,6 +158,21 @@ def listVideos(tagId):
     xbmcplugin.addSortMethod(_HANDLE, xbmcplugin.SORT_METHOD_DATEADDED)
     xbmcplugin.addSortMethod(_HANDLE, xbmcplugin.SORT_METHOD_LABEL)
     xbmcplugin.endOfDirectory(_HANDLE)
+
+
+def loadStreamUrl(tagList, mediaid):
+    url = _WERDER_URL + '/api/rest/video/related/video.json?orderBy=publishDateTime&limit=10&tagList=' + tagList
+    file = urllib.urlopen(url)
+    results = json.load(file)
+    for s in reversed(results):
+        xbmc.log("s['mediaid']: "  + str(s['mediaid']))
+        if s['mediaid'] == mediaid:
+            return 'https:' + s['file'] + _STREAM_MANIFEST
+    
+    xbmc.log('WERDER.TV - video url: ' + url, xbmc.LOGINFO)
+    xbmc.log('WERDER.TV - video mediaid: ' + str(mediaid), xbmc.LOGINFO)
+    xbmc.log('WERDER.TV - video.json: ' + str(results), xbmc.LOGINFO)
+    return None
 
 
 def showVideo(tagList, mediaid):
@@ -209,7 +209,6 @@ def router(paramstring):
             showVideo(params['tagList'], int(params['mediaid']))
     else:
         listLatestVideos()
-
 
 
 if __name__ == '__main__':
