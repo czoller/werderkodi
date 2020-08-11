@@ -36,6 +36,7 @@ class WerderVideo(object):
         self.description = json['description']
         self.date = json['publishDateTime']
         self.tagList = json['tagList']
+        self.mediaid = json['id']
     
     def toListItem(self):
         listItem = xbmcgui.ListItem(label=self.title)
@@ -45,7 +46,7 @@ class WerderVideo(object):
         fanart = _WERDER_URL + '/?eID=crop&width=' + str(_WIN.getWidth()) + '&height=' + str(_WIN.getHeight()) + '&file=' + self.image
         listItem.setArt({'thumb': thumb, 'icon': thumb, 'fanart': fanart})
         page = _WERDER_URL + self.page
-        url = _URL + '?show=play&tagList=' + self.tagList
+        url = _URL + '?show=play&tagList=' + self.tagList + '&mediaid=' + str(self.mediaid)
         
         return (url, listItem, False)
     
@@ -117,11 +118,19 @@ def loadGroupList():
     return listItems
 
 
-def loadStreamUrl(tagList):
+def loadStreamUrl(tagList, mediaid):
     url = _WERDER_URL + '/api/rest/video/related/video.json?orderBy=publishDateTime&limit=10&tagList=' + tagList
     file = urllib.urlopen(url)
     results = json.load(file)
-    return 'https:' + results[-1]['file'] + _STREAM_MANIFEST
+    for s in reversed(results):
+        xbmc.log("s['mediaid']: "  + str(s['mediaid']))
+        if s['mediaid'] == mediaid:
+            return 'https:' + s['file'] + _STREAM_MANIFEST
+    
+    xbmc.log('WERDER.TV - video url: ' + url, xbmc.LOGINFO)
+    xbmc.log('WERDER.TV - video mediaid: ' + str(mediaid), xbmc.LOGINFO)
+    xbmc.log('WERDER.TV - video.json: ' + str(results), xbmc.LOGINFO)
+    return None
 
 
 def listLatestVideos():
@@ -166,20 +175,24 @@ def listVideos(tagId):
     xbmcplugin.endOfDirectory(_HANDLE)
 
 
-def showVideo(tagList):
+def showVideo(tagList, mediaid):
 
     xbmc.log('WERDER.TV - tagList: ' + tagList)
-    url = loadStreamUrl(tagList)
-    xbmc.log('WERDER.TV - stream url: ' + url)
-
-    #siehe https://github.com/emilsvennesson/script.module.inputstreamhelper
-    if _IS_HELPER.check_inputstream():
-        playItem = xbmcgui.ListItem(path=url)
-        playItem.setContentLookup(False)
-        playItem.setMimeType(_STREAM_MIME_TYPE)
-        playItem.setProperty('inputstream.adaptive.manifest_type', _STREAM_PROTOCOL)
-        playItem.setProperty(_INPUTSTREAM_PROPERTY, _IS_HELPER.inputstream_addon)
-        xbmcplugin.setResolvedUrl(_HANDLE, True, playItem)
+    url = loadStreamUrl(tagList, mediaid)
+    if not url:
+        xbmc.log('WERDER.TV - Keine Stream URL gefunden für mediaid: ' + str(mediaid) + ' (tagList: ' + tagList + ')', xbmc.LOGERROR)
+        dialog = xbmcgui.Dialog()
+        dialog.notification('Fehler', 'Stream-URL nicht gefunden', xbmcgui.NOTIFICATION_ERROR, 5000, True)
+    else:
+        xbmc.log('WERDER.TV - stream url: ' + url, xbmc.LOGINFO)
+        #siehe https://github.com/emilsvennesson/script.module.inputstreamhelper
+        if _IS_HELPER.check_inputstream():
+            playItem = xbmcgui.ListItem(path=url)
+            playItem.setContentLookup(False)
+            playItem.setMimeType(_STREAM_MIME_TYPE)
+            playItem.setProperty('inputstream.adaptive.manifest_type', _STREAM_PROTOCOL)
+            playItem.setProperty(_INPUTSTREAM_PROPERTY, _IS_HELPER.inputstream_addon)
+            xbmcplugin.setResolvedUrl(_HANDLE, True, playItem)
 
 
 def router(paramstring):
@@ -193,7 +206,7 @@ def router(paramstring):
         elif params['show'] == 'tag':
             listVideos(int(params['tag']))
         elif params['show'] == 'play':
-            showVideo(params['tagList'])
+            showVideo(params['tagList'], int(params['mediaid']))
     else:
         listLatestVideos()
 
