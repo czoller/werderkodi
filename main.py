@@ -60,7 +60,7 @@ class WerderLiveVideo(WerderVideo):
     def __init__(self, json):
 
         self.title = 'LIVE: ' + json['title'] 
-        self.image = json['image']
+        self.image = json['image'] if 'image' in json else None
         self.primaryTagLabel = json['subTitle']
         self.description = json['subTitle']
         self.date = json['startDate']
@@ -177,10 +177,10 @@ def loadLiveMatch():
                     result['stream'] = streamRegExMatch.group('stream')                
                     if 'image' in result:
                         break
-        
-        return WerderLiveVideo(result)
-    else:
-        return None
+        if 'stream' in result: 
+            return WerderLiveVideo(result)
+
+    return None
 
 
 def listLatestVideos():
