@@ -1,0 +1,1369 @@
+{
+  "id" : "5f219555a838540344e893e5",
+  "sportType" : "SOCCER",
+  "competitionId" : "-1",
+  "season" : 2020,
+  "matchDay" : 15,
+  "phase" : "1",
+  "type" : "special-match",
+  "title" : "SV Werder Bremen - Hannover 96",
+  "subTitle" : "Testspiel",
+  "startDate" : "2020-09-05T11:00:00+00:00",
+  "confirmed" : true,
+  "location" : "Bremen",
+  "place" : "Stadion \u0022Platz 11\u0022",
+  "result" : "0:0",
+  "resultType" : "NormalResult",
+  "period" : "FirstHalf",
+  "qualificationID" : 1,
+  "homeTeam" : {
+    "name" : "SV Werder Bremen",
+    "shortName" : "SV Werder",
+    "logo" : "\/fileadmin\/_SYSTEM\/Matchcenter\/Bundesliga\/TeamLogos\/svw.svg",
+    "pngLogo" : "\/fileadmin\/_SYSTEM\/Matchcenter\/Bundesliga\/TeamLogos\/svw.png",
+    "manager" : "Florian Kohfeldt",
+    "symId" : "SVW",
+    "clubColorOne" : "#006737",
+    "id" : "5df0823be43ba55e21c35029",
+    "providedId" : "171",
+    "clubColorTwo" : "#FFFFFF",
+    "providedTeamId" : "5df0823ce43ba55e21c36ec9"
+  },
+  "awayTeam" : {
+    "name" : "Hannover 96",
+    "shortName" : "Hannover 96",
+    "logo" : "\/fileadmin\/_SYSTEM\/Matchcenter\/Bundesliga\/TeamLogos\/h96.svg",
+    "pngLogo" : "\/fileadmin\/_SYSTEM\/Matchcenter\/Logos\/1._Bundesliga\/Saison_2015_2016\/H96.png",
+    "manager" : "Kenan Kocak",
+    "symId" : "H96",
+    "clubColorOne" : "#000000",
+    "id" : "5df0823be43ba55e21c35025",
+    "providedId" : "808",
+    "clubColorTwo" : "#FFFFFF",
+    "providedTeamId" : "5df0823ce43ba55e21c36ec5"
+  },
+  "homeTotalScore" : 0,
+  "awayTotalScore" : 0,
+  "periodScores" : [],
+  "homeLineup" : {
+    "id" : "5f535f7e113fc261cc80e9fe",
+    "formationName" : "4-2-2-2",
+    "matchId" : "5f219555a838540344e893e5",
+    "teamId" : "5df0823be43ba55e21c35029",
+    "formation" : {
+      "id" : "5df08241e43ba55e21c5aeeb",
+      "formationName" : "4-2-2-2",
+      "positions" : [ {
+        "positionId" : 1,
+        "positionBottom" : 5,
+        "positionLeft" : 50
+      }, {
+        "positionId" : 2,
+        "positionBottom" : 22,
+        "positionLeft" : 15
+      }, {
+        "positionId" : 3,
+        "positionBottom" : 22,
+        "positionLeft" : 38
+      }, {
+        "positionId" : 4,
+        "positionBottom" : 22,
+        "positionLeft" : 61
+      }, {
+        "positionId" : 5,
+        "positionBottom" : 22,
+        "positionLeft" : 84
+      }, {
+        "positionId" : 6,
+        "positionBottom" : 40,
+        "positionLeft" : 33
+      }, {
+        "positionId" : 7,
+        "positionBottom" : 40,
+        "positionLeft" : 66
+      }, {
+        "positionId" : 8,
+        "positionBottom" : 57,
+        "positionLeft" : 20
+      }, {
+        "positionId" : 9,
+        "positionBottom" : 57,
+        "positionLeft" : 80
+      }, {
+        "positionId" : 10,
+        "positionBottom" : 75,
+        "positionLeft" : 33
+      }, {
+        "positionId" : 11,
+        "positionBottom" : 75,
+        "positionLeft" : 66
+      } ]
+    },
+    "players" : {
+      "1" : [
+          {
+            "player" : {
+              "firstName" : "Stefanos",
+              "lastName" : "Kapino",
+              "birthDate" : "1994-03-18",
+              "weight" : "85",
+              "height" : "196",
+              "jerseyNum" : "27",
+              "joinDate" : "2018-08-01",
+              "image" : "\/fileadmin\/Fussball\/Profis\/Spielerbilder\/App_Spielerbilder\/SVW_kapino_stefanos_s3_1920.png",
+              "signatureImage" : "\/fileadmin\/player\/kapino_unterschrift.png",
+              "matchcenterImage" : "\/fileadmin\/Fussball\/Profis\/Spielerbilder\/Matchcenter\/2019_20_Matchcenter\/Matchcenter2020_Kachel_Kapino.png",
+              "birthPlace" : "Pir\u00e4us",
+              "nationality" : "Griechenland",
+              "position" : "Torwart",
+              "id" : "5df0823be43ba55e21c350f7",
+              "providedId" : "88596",
+              "nationalityCode" : "Greece",
+              "previousClubs" : "Panathinaikos Athen, 1. FSV Mainz 05, Olympiakos Pir\u00e4us, Nottingham Forest",
+              "achievements" : "Griechischer Meister mit Olympiakos Pir\u00e4us 2016 und 2017, griechischer Pokalsieger 2014 mit Panathinaikos Athen",
+              "familyStatus" : "verheiratet mit Mirketa",
+              "children" : "keine",
+              "active" : true,
+              "missionsOverall" : [ {
+                "name" : "Bundesliga",
+                "text" : "4"
+              }, {
+                "name" : "Championship",
+                "text" : "4"
+              }, {
+                "name" : "Super League",
+                "text" : "67"
+              }, {
+                "name" : "Champions League",
+                "text" : "1"
+              }, {
+                "name" : "Champions League Qualifikation",
+                "text" : "6"
+              }, {
+                "name" : "Europa League Qualifikation",
+                "text" : "2"
+              }, {
+                "name" : "Griechischer Pokal",
+                "text" : "15"
+              }, {
+                "name" : "A-L\u00e4nderspiele",
+                "text" : "9"
+              } ],
+              "missions" : [ {
+                "name" : "Bundesliga",
+                "text" : "4"
+              } ],
+              "sortJerseyNum" : "00027"
+            },
+            "position" : 1,
+            "jerseyNumber" : "27",
+            "line" : "1"
+          },
+          {
+            "player" : {
+              "firstName" : "Yuya",
+              "lastName" : "Osako",
+              "birthDate" : "1990-05-18",
+              "weight" : "71",
+              "height" : "182",
+              "jerseyNum" : "8",
+              "joinDate" : "2018-07-01",
+              "image" : "\/fileadmin\/Fussball\/Profis\/Spielerbilder\/App_Spielerbilder\/SVW_osako_yuya_s5_1920.png",
+              "signatureImage" : "\/fileadmin\/player\/osako_unterschrift.png",
+              "matchcenterImage" : "\/fileadmin\/Fussball\/Profis\/Spielerbilder\/Matchcenter\/2019_20_Matchcenter\/Matchcenter2020_Kachel_Osako.png",
+              "birthPlace" : "Kaseda",
+              "nationality" : "Japan",
+              "position" : "Angriff",
+              "id" : "5df0823be43ba55e21c350f3",
+              "providedId" : "158206",
+              "nationalityCode" : "Japan",
+              "previousClubs" : "Kashima Antlers, TSV 1860 M\u00fcnchen, 1. FC K\u00f6ln",
+              "achievements" : "Japanischer Meister: 2009, Japanischer Pokalsieger: 2010, Japanischer Ligapokalsieger: 2011 und 2012, Japanischer Superpokalsieger: 2009 und 2010, Ostasienmeister: 2014, Torsch\u00fctzenk\u00f6nig J. League Cup: 2012, Fu\u00dfballer des Jahres in Japan: 2018",
+              "familyStatus" : "verheiratet mit Miwa",
+              "children" : "zwei T\u00f6chter",
+              "active" : true,
+              "missionsOverall" : [ {
+                "name" : "Bundesliga",
+                "text" : "157"
+              }, {
+                "name" : "2. Bundesliga",
+                "text" : "15"
+              }, {
+                "name" : "J1 League",
+                "text" : "139"
+              }, {
+                "name" : "Europa League",
+                "text" : "6"
+              }, {
+                "name" : "DFB-Pokal",
+                "text" : "12"
+              }, {
+                "name" : "Relegation 1. Bundesliga",
+                "text" : "2"
+              }, {
+                "name" : "A-L\u00e4nderspiele",
+                "text" : "45"
+              } ],
+              "missions" : [ {
+                "name" : "Bundesliga",
+                "text" : "49"
+              }, {
+                "name" : "DFB-Pokal",
+                "text" : "6"
+              }, {
+                "name" : "Relegation 1. Bundesliga",
+                "text" : "2"
+              } ],
+              "goalsOverall" : [ {
+                "name" : "Bundesliga",
+                "text" : "20"
+              }, {
+                "name" : "2. Bundesliga",
+                "text" : "6"
+              }, {
+                "name" : "J1 League",
+                "text" : "40"
+              }, {
+                "name" : "Europa League",
+                "text" : "2"
+              }, {
+                "name" : "DFB-Pokal",
+                "text" : "5"
+              }, {
+                "name" : "A-L\u00e4nderspiele",
+                "text" : "15"
+              } ],
+              "goals" : [ {
+                "name" : "Bundesliga",
+                "text" : "11"
+              }, {
+                "name" : "DFB-Pokal",
+                "text" : "3"
+              } ],
+              "sortJerseyNum" : "00008"
+            },
+            "position" : 8,
+            "jerseyNumber" : "8",
+            "line" : "1"
+          },
+          {
+            "player" : {
+              "firstName" : "Nick",
+              "lastName" : "Woltemade",
+              "birthDate" : "2002-02-14",
+              "weight" : "75",
+              "height" : "198",
+              "jerseyNum" : "41",
+              "joinDate" : "2019-10-25",
+              "birthPlace" : "Bremen",
+              "nationality" : "Deutschland",
+              "position" : "Angriff",
+              "id" : "5df0823ce43ba55e21c36eb4",
+              "providedId" : "470313",
+              "nationalityCode" : "Germany",
+              "previousClubs" : "TS Woltmershausen (Jugend)",
+              "active" : true,
+              "missionsOverall" : [ {
+                "name" : "Bundesliga",
+                "text" : "5"
+              }, {
+                "name" : "DFB-Pokal",
+                "text" : "1"
+              } ],
+              "missions" : [ {
+                "name" : "Bundesliga",
+                "text" : "5"
+              }, {
+                "name" : "DFB-Pokal",
+                "text" : "1"
+              } ],
+              "sortJerseyNum" : "00041"
+            },
+            "position" : 9,
+            "jerseyNumber" : "41",
+            "line" : "1"
+          },
+          {
+            "player" : {
+              "firstName" : "Christian",
+              "lastName" : "Gro\u00df",
+              "birthDate" : "1989-02-08",
+              "weight" : "75",
+              "height" : "182",
+              "jerseyNum" : "36",
+              "joinDate" : "2019-08-09",
+              "image" : "\/fileadmin\/Fussball\/Profis\/Spielerbilder\/App_Spielerbilder\/SVW_gross_christian_s2_1920.png",
+              "matchcenterImage" : "\/fileadmin\/Fussball\/Profis\/Spielerbilder\/Matchcenter\/2019_20_Matchcenter\/2020_Kachel_gross_Matchcenter.png",
+              "birthPlace" : "Bremen",
+              "nationality" : "Deutschland",
+              "position" : "Abwehr",
+              "id" : "5df0823be43ba55e21c357d8",
+              "providedId" : "67536",
+              "nationalityCode" : "Germany",
+              "previousClubs" : "VfL Osnabr\u00fcck, SF Lotte, SV Babelsberg 03, Hamburger SV, VfL Osnabr\u00fcck (Jugend), BV Cloppenburg (Jugend)",
+              "active" : true,
+              "missionsOverall" : [ {
+                "name" : "Bundesliga",
+                "text" : "14"
+              }, {
+                "name" : "DFB-Pokal",
+                "text" : "5"
+              }, {
+                "name" : "Relegation 1. Bundesliga",
+                "text" : "2"
+              }, {
+                "name" : "3. Liga",
+                "text" : "182"
+              }, {
+                "name" : "Regionalliga Nord",
+                "text" : "31"
+              }, {
+                "name" : "Regionalliga West",
+                "text" : "35"
+              } ],
+              "missions" : [ {
+                "name" : "Bundesliga",
+                "text" : "14"
+              }, {
+                "name" : "DFB-Pokal",
+                "text" : "1"
+              }, {
+                "name" : "Relegation 1. Bundesliga",
+                "text" : "2"
+              }, {
+                "name" : "Regionalliga Nord",
+                "text" : "31"
+              } ],
+              "goalsOverall" : [ {
+                "name" : "DFB-Pokal",
+                "text" : "1"
+              }, {
+                "name" : "3. Liga",
+                "text" : "7"
+              }, {
+                "name" : "Regionalliga Nord",
+                "text" : "9"
+              }, {
+                "name" : "Regionalliga West",
+                "text" : "1"
+              } ],
+              "goals" : [ {
+                "name" : "Regionalliga Nord",
+                "text" : "9"
+              } ],
+              "sortJerseyNum" : "00036"
+            },
+            "position" : 4,
+            "jerseyNumber" : "36",
+            "line" : "1"
+          },
+          {
+            "player" : {
+              "firstName" : "Niclas",
+              "lastName" : "F\u00fcllkrug",
+              "birthDate" : "1993-02-09",
+              "weight" : "83",
+              "height" : "189",
+              "jerseyNum" : "11",
+              "joinDate" : "2019-07-01",
+              "leaveDate" : "2013-08-24",
+              "image" : "\/fileadmin\/Fussball\/Profis\/Spielerbilder\/App_Spielerbilder\/SVW_fuellkrug_niclas_g_1920.png",
+              "matchcenterImage" : "\/fileadmin\/Fussball\/Profis\/Spielerbilder\/Matchcenter\/2019_20_Matchcenter\/Matchcenter2020_Kachel_Fuellkrug.png",
+              "birthPlace" : "Hannover",
+              "nationality" : "Deutschland",
+              "position" : "Angriff",
+              "id" : "5df0823be43ba55e21c353cc",
+              "providedId" : "91889",
+              "nationalityCode" : "Germany",
+              "previousClubs" : "Hannover 96, 1. FC N\u00fcrnberg, SpVgg Greuther F\u00fcrth, SV Werder Bremen, Sportfreunde Ricklingen (Jugend), TuS Ricklingen (Jugend)",
+              "familyStatus" : "verheiratet mit Lisa",
+              "children" : "Tochter Emilia",
+              "active" : true,
+              "missionsOverall" : [ {
+                "name" : "Bundesliga",
+                "text" : "79"
+              }, {
+                "name" : "2. Bundesliga",
+                "text" : "102"
+              }, {
+                "name" : "3. Liga",
+                "text" : "22"
+              }, {
+                "name" : "DFB-Pokal",
+                "text" : "12"
+              }, {
+                "name" : "Relegation 1. Bundesliga",
+                "text" : "6"
+              } ],
+              "missions" : [ {
+                "name" : "Bundesliga",
+                "text" : "31"
+              }, {
+                "name" : "2. Bundesliga",
+                "text" : "0"
+              }, {
+                "name" : "3. Liga",
+                "text" : "22"
+              }, {
+                "name" : "DFB-Pokal",
+                "text" : "3"
+              }, {
+                "name" : "Relegation 1. Bundesliga",
+                "text" : "2"
+              } ],
+              "goalsOverall" : [ {
+                "name" : "Bundesliga",
+                "text" : "22"
+              }, {
+                "name" : "2. Bundesliga",
+                "text" : "28"
+              }, {
+                "name" : "3. Liga",
+                "text" : "5"
+              }, {
+                "name" : "DFB-Pokal",
+                "text" : "5"
+              } ],
+              "goals" : [ {
+                "name" : "Bundesliga",
+                "text" : "6"
+              }, {
+                "name" : "2. Bundesliga",
+                "text" : "0"
+              }, {
+                "name" : "3. Liga",
+                "text" : "5"
+              }, {
+                "name" : "DFB-Pokal",
+                "text" : "1"
+              } ],
+              "sortJerseyNum" : "00011"
+            },
+            "position" : 10,
+            "jerseyNumber" : "11",
+            "line" : "1"
+          },
+          {
+            "player" : {
+              "firstName" : "Maximilian",
+              "lastName" : "Eggestein",
+              "birthDate" : "1996-12-08",
+              "weight" : "75",
+              "height" : "181",
+              "jerseyNum" : "35",
+              "joinDate" : "2011-07-01",
+              "image" : "\/fileadmin\/Fussball\/Profis\/Spielerbilder\/App_Spielerbilder\/SVW_eggestein_maximilian_s2_1920.png",
+              "signatureImage" : "\/fileadmin\/player\/440f13e533906888b194b5716f07215feggstein.png",
+              "matchcenterImage" : "\/fileadmin\/Fussball\/Profis\/Spielerbilder\/Matchcenter\/2019_20_Matchcenter\/Matchcenter2020_Kachel_M.png",
+              "birthPlace" : "Hannover",
+              "nationality" : "Deutschland",
+              "position" : "Mittelfeld",
+              "id" : "5df0823be43ba55e21c3528f",
+              "providedId" : "200850",
+              "nationalityCode" : "Germany",
+              "previousClubs" : "TSV Havelse",
+              "achievements" : "U21-Vizeeuropameister 2019, Aufstieg in die 3. Liga 2015 mit Werder Bremen U 23",
+              "familyStatus" : "ledig",
+              "active" : true,
+              "missionsOverall" : [ {
+                "name" : "Bundesliga",
+                "text" : "123"
+              }, {
+                "name" : "DFB-Pokal",
+                "text" : "14"
+              }, {
+                "name" : "Relegation 1. Bundesliga",
+                "text" : "2"
+              }, {
+                "name" : "3. Liga",
+                "text" : "22"
+              } ],
+              "missions" : [ {
+                "name" : "Bundesliga",
+                "text" : "123"
+              }, {
+                "name" : "DFB-Pokal",
+                "text" : "14"
+              }, {
+                "name" : "Relegation 1. Bundesliga",
+                "text" : "2"
+              }, {
+                "name" : "3. Liga",
+                "text" : "22"
+              } ],
+              "goalsOverall" : [ {
+                "name" : "Bundesliga",
+                "text" : "9"
+              }, {
+                "name" : "DFB-Pokal",
+                "text" : "2"
+              }, {
+                "name" : "3. Liga",
+                "text" : "3"
+              } ],
+              "goals" : [ {
+                "name" : "Bundesliga",
+                "text" : "9"
+              }, {
+                "name" : "DFB-Pokal",
+                "text" : "2"
+              }, {
+                "name" : "3. Liga",
+                "text" : "3"
+              } ],
+              "sortJerseyNum" : "00035"
+            },
+            "position" : 6,
+            "jerseyNumber" : "35",
+            "line" : "1"
+          },
+          {
+            "player" : {
+              "firstName" : "Felix",
+              "lastName" : "Agu",
+              "birthDate" : "1999-09-27",
+              "weight" : "67",
+              "height" : "180",
+              "jerseyNum" : "17",
+              "joinDate" : "2020-07-01",
+              "birthPlace" : "Osnabr\u00fcck",
+              "nationality" : "Deutschland",
+              "position" : "Abwehr",
+              "id" : "5df0823ce43ba55e21c36d10",
+              "providedId" : "449695",
+              "nationalityCode" : "Germany",
+              "previousClubs" : "VfL Osnabr\u00fcck, Osnabr\u00fccker SC (Jugend)",
+              "achievements" : "Deutscher Drittligameister 2019",
+              "active" : true,
+              "missionsOverall" : [ {
+                "name" : "2. Bundesliga",
+                "text" : "28"
+              }, {
+                "name" : "3. Liga",
+                "text" : "17"
+              } ],
+              "goalsOverall" : [ {
+                "name" : "3. Liga",
+                "text" : "2"
+              } ],
+              "sortJerseyNum" : "00017"
+            },
+            "position" : 2,
+            "jerseyNumber" : "17",
+            "line" : "1"
+          },
+          {
+            "player" : {
+              "firstName" : "Niklas",
+              "lastName" : "Moisander",
+              "birthDate" : "1985-09-29",
+              "weight" : "75",
+              "height" : "183",
+              "jerseyNum" : "18",
+              "joinDate" : "2016-07-09",
+              "image" : "\/fileadmin\/Fussball\/Profis\/Spielerbilder\/App_Spielerbilder\/SVW_moisander_niklas_s5_1920.png",
+              "signatureImage" : "\/fileadmin\/player\/fbafb0801ecbda779f769bc17f24c3b2.png",
+              "matchcenterImage" : "\/fileadmin\/Fussball\/Profis\/Spielerbilder\/Matchcenter\/2019_20_Matchcenter\/Matchcenter2020_Kachel_Moisander.png",
+              "birthPlace" : "Turku",
+              "nationality" : "Finnland",
+              "position" : "Abwehr",
+              "id" : "5df0823be43ba55e21c3622c",
+              "providedId" : "50448",
+              "nationalityCode" : "Finland",
+              "previousClubs" : "Sampdoria Genua, Ajax Amsterdam, AZ Alkmaar, FC Zwolle, Ajax Amsterdam, Turun Palloseura",
+              "achievements" : "Niederl\u00e4ndischer Meister 2009 und 2013 mit Ajax Amsterdam",
+              "familyStatus" : "verheiratet mit Caroline",
+              "children" : "Tochter Stella",
+              "education" : "Abitur",
+              "active" : true,
+              "missionsOverall" : [ {
+                "name" : "Bundesliga",
+                "text" : "107"
+              }, {
+                "name" : "DFB-Pokal",
+                "text" : "11"
+              }, {
+                "name" : "Relegation 1. Bundesliga",
+                "text" : "1"
+              }, {
+                "name" : "Eredivise",
+                "text" : "188"
+              }, {
+                "name" : "Serie A",
+                "text" : "22"
+              }, {
+                "name" : "Champions League",
+                "text" : "20"
+              }, {
+                "name" : "Europa League",
+                "text" : "19"
+              }, {
+                "name" : "Europa League Qualifikation",
+                "text" : "6"
+              }, {
+                "name" : "A-L\u00e4nderspiele",
+                "text" : "62"
+              } ],
+              "missions" : [ {
+                "name" : "Bundesliga",
+                "text" : "107"
+              }, {
+                "name" : "DFB-Pokal",
+                "text" : "11"
+              }, {
+                "name" : "Relegation 1. Bundesliga",
+                "text" : "1"
+              } ],
+              "goalsOverall" : [ {
+                "name" : "Bundesliga",
+                "text" : "2"
+              }, {
+                "name" : "DFB-Pokal",
+                "text" : "1"
+              }, {
+                "name" : "Eredivise",
+                "text" : "8"
+              }, {
+                "name" : "Champions League",
+                "text" : "2"
+              }, {
+                "name" : "Europa League",
+                "text" : "1"
+              }, {
+                "name" : "Europa League Qualifikation",
+                "text" : "0"
+              }, {
+                "name" : "A-L\u00e4nderspiele",
+                "text" : "2"
+              } ],
+              "goals" : [ {
+                "name" : "Bundesliga",
+                "text" : "2"
+              }, {
+                "name" : "DFB-Pokal",
+                "text" : "1"
+              } ],
+              "sortJerseyNum" : "00018"
+            },
+            "position" : 3,
+            "jerseyNumber" : "18",
+            "line" : "1"
+          },
+          {
+            "player" : {
+              "firstName" : "Joshua",
+              "lastName" : "Sargent",
+              "jerseyNum" : "19",
+              "joinDate" : "2018-07-01",
+              "image" : "\/fileadmin\/Fussball\/Profis\/Spielerbilder\/Ganzkoerper__Links_Gedreht\/GKJosh-Sargent_19-20_11.png",
+              "matchcenterImage" : "\/fileadmin\/Fussball\/Profis\/Spielerbilder\/Matchcenter\/2019_20_Matchcenter\/Matchcenter2020_Kachel_Sargent.png",
+              "position" : "Angriff",
+              "id" : "5df0823be43ba55e21c369a7",
+              "active" : false,
+              "sortJerseyNum" : "00019"
+            },
+            "position" : 11,
+            "jerseyNumber" : "19",
+            "line" : "1"
+          },
+          {
+            "player" : {
+              "firstName" : "Patrick",
+              "lastName" : "Erras",
+              "birthDate" : "1995-01-21",
+              "weight" : "87",
+              "height" : "196",
+              "jerseyNum" : "29",
+              "joinDate" : "2020-07-30",
+              "birthPlace" : "Amberg",
+              "nationality" : "Deutschland",
+              "position" : "Mittelfeld",
+              "id" : "5df0823be43ba55e21c353c8",
+              "providedId" : "216604",
+              "nationalityCode" : "Germany",
+              "previousClubs" : "1. FC N\u00fcrnberg, SV Raigering (Jugend)",
+              "familyStatus" : "verheiratet",
+              "children" : "Tochter",
+              "active" : true,
+              "missionsOverall" : [ {
+                "name" : "Bundesliga",
+                "text" : "19"
+              }, {
+                "name" : "2. Bundesliga",
+                "text" : "61"
+              }, {
+                "name" : "Relegation 2. Bundesliga",
+                "text" : "2"
+              }, {
+                "name" : "DFB-Pokal",
+                "text" : "4"
+              } ],
+              "goalsOverall" : [ {
+                "name" : "2. Bundesliga",
+                "text" : "9"
+              } ],
+              "sortJerseyNum" : "00029"
+            },
+            "position" : 7,
+            "jerseyNumber" : "29",
+            "line" : "1"
+          },
+          {
+            "player" : {
+              "firstName" : "Theodor",
+              "lastName" : "Gebre Selassie",
+              "birthDate" : "1986-12-24",
+              "weight" : "71",
+              "height" : "181",
+              "jerseyNum" : "23",
+              "joinDate" : "2012-07-01",
+              "image" : "\/fileadmin\/Fussball\/Profis\/Spielerbilder\/App_Spielerbilder\/SVW_gebre_selassie_theodor_g_1920.png",
+              "signatureImage" : "\/fileadmin\/Fussball\/Profis\/Saison_2017_2018\/Sonstige_Bilder\/gebreselassie_unterschrift.png",
+              "matchcenterImage" : "\/fileadmin\/Fussball\/Profis\/Spielerbilder\/Matchcenter\/2019_20_Matchcenter\/Matchcenter2020_Kachel_GebreSelassie.png",
+              "birthPlace" : "Trebic",
+              "nationality" : "Tschechien",
+              "position" : "Abwehr",
+              "id" : "5df0823be43ba55e21c35282",
+              "providedId" : "49869",
+              "nationalityCode" : "Czech",
+              "previousClubs" : "Slovan Liberec, Slavia Prag, SK Velke Mezirici, FC Vysocina Jilhava (alle Tschechien)",
+              "achievements" : "Tschechischer Meister 2012 mit Slovan Liberec und 2009 und 2008 mit Slavia Prag, Erreichen des Viertelfinals der EURO 2012",
+              "familyStatus" : "verheiratet mit Leona",
+              "children" : "S\u00f6hne Noe und Eli",
+              "hobbies" : "Filme, Musik",
+              "active" : true,
+              "missionsOverall" : [ {
+                "name" : "Bundesliga",
+                "text" : "237"
+              }, {
+                "name" : "DFB-Pokal",
+                "text" : "20"
+              }, {
+                "name" : "Relegation 1. Bundesliga",
+                "text" : "2"
+              }, {
+                "name" : "Champions League Qualifikation",
+                "text" : "1"
+              }, {
+                "name" : "Europa League Qualifikation",
+                "text" : "4"
+              }, {
+                "name" : "Tschechische Liga",
+                "text" : "108"
+              }, {
+                "name" : "A-L\u00e4nderspiele",
+                "text" : "54"
+              } ],
+              "missions" : [ {
+                "name" : "Bundesliga",
+                "text" : "237"
+              }, {
+                "name" : "DFB-Pokal",
+                "text" : "20"
+              }, {
+                "name" : "Relegation 1. Bundesliga",
+                "text" : "2"
+              } ],
+              "goalsOverall" : [ {
+                "name" : "Bundesliga",
+                "text" : "20"
+              }, {
+                "name" : "DFB-Pokal",
+                "text" : "0"
+              }, {
+                "name" : "Tschechische Liga",
+                "text" : "8"
+              }, {
+                "name" : "A-L\u00e4nderspiele",
+                "text" : "3"
+              } ],
+              "goals" : [ {
+                "name" : "Bundesliga",
+                "text" : "20"
+              }, {
+                "name" : "DFB-Pokal",
+                "text" : "0"
+              } ],
+              "sortJerseyNum" : "00023"
+            },
+            "position" : 5,
+            "jerseyNumber" : "23",
+            "line" : "1"
+          } ],
+      "2" : [
+          {
+            "player" : {
+              "firstName" : "Eduardo",
+              "lastName" : "Dos Santos Haesler",
+              "jerseyNum" : "38",
+              "position" : "Torwart",
+              "id" : "5df0823ce43ba55e21c36eb0",
+              "active" : false,
+              "sortJerseyNum" : "00038"
+            },
+            "position" : 1,
+            "jerseyNumber" : "38",
+            "line" : "2"
+          },
+          {
+            "player" : {
+              "firstName" : "Maik",
+              "lastName" : "Nawrocki",
+              "jerseyNum" : "51",
+              "position" : "Abwehr",
+              "id" : "5df0823ce43ba55e21c36eab",
+              "active" : false,
+              "sortJerseyNum" : "00051"
+            },
+            "position" : 4,
+            "jerseyNumber" : "51",
+            "line" : "2"
+          },
+          {
+            "player" : {
+              "firstName" : "\u00d6mer",
+              "lastName" : "Toprak",
+              "birthDate" : "1989-07-21",
+              "weight" : "83",
+              "height" : "186",
+              "jerseyNum" : "21",
+              "joinDate" : "2020-07-08",
+              "leaveDate" : "2020-07-07",
+              "image" : "\/fileadmin\/Fussball\/Profis\/Spielerbilder\/App_Spielerbilder\/SVW_toprak_oemer_s2_1920.png",
+              "matchcenterImage" : "\/fileadmin\/Fussball\/Profis\/Spielerbilder\/Matchcenter\/2019_20_Matchcenter\/2020_Kachel_Toprak_Matchcenter.png",
+              "birthPlace" : "Ravensburg",
+              "nationality" : "T\u00fcrkei",
+              "position" : "Abwehr",
+              "id" : "5df0823be43ba55e21c3511d",
+              "providedId" : "50022",
+              "nationalityCode" : "Turkey",
+              "previousClubs" : "FV Ravensburg, SC Freiburg, Bayer 04 Leverkusen, Borussia Dortmund",
+              "achievements" : "U19-Europameister 2008 mit Deutschland, Deutscher A-Jugend-Meister 2007\/2008, Superpokalsieger 2019\/2020 mit Borussia Dortmund",
+              "familyStatus" : "ledig",
+              "children" : "keine",
+              "active" : true,
+              "missionsOverall" : [ {
+                "name" : "Bundesliga",
+                "text" : "237"
+              }, {
+                "name" : "DFB-Pokal",
+                "text" : "19"
+              }, {
+                "name" : "Champions League",
+                "text" : "39"
+              }, {
+                "name" : "Champions League Qualifikation",
+                "text" : "2"
+              }, {
+                "name" : "Europa League",
+                "text" : "8"
+              } ],
+              "missions" : [ {
+                "name" : "Bundesliga",
+                "text" : "10"
+              }, {
+                "name" : "DFB-Pokal",
+                "text" : "2"
+              } ],
+              "goalsOverall" : [ {
+                "name" : "Bundesliga",
+                "text" : "5"
+              }, {
+                "name" : "DFB-Pokal",
+                "text" : "0"
+              }, {
+                "name" : "Champions League",
+                "text" : "2"
+              } ],
+              "goals" : [ {
+                "name" : "Bundesliga",
+                "text" : "0"
+              }, {
+                "name" : "DFB-Pokal",
+                "text" : "0"
+              } ],
+              "sortJerseyNum" : "00021"
+            },
+            "position" : 2,
+            "jerseyNumber" : "21",
+            "line" : "2"
+          },
+          {
+            "player" : {
+              "firstName" : "Marin",
+              "lastName" : "Pudic",
+              "birthDate" : "2000-04-23",
+              "height" : "180",
+              "jerseyNum" : "50",
+              "joinDate" : "2019-07-01",
+              "image" : "\/fileadmin\/Fussball\/U23\/Spielerbilder\/Saison_19_20\/Ganzkoerper_frei\/Marin_Pudic.png",
+              "birthPlace" : "M\u00fcnchen",
+              "nationality" : "Kroatisch \/ Deutsch",
+              "position" : "Mittelfeld",
+              "id" : "5df0823be43ba55e21c36c1a",
+              "nationalityCode" : "HRV \/ D",
+              "previousClubs" : "FC Bayern M\u00fcnchen II, FC Bayern M\u00fcnchen (Jugend)",
+              "achievements" : "Deutscher B-Jugend Meister 2017",
+              "active" : true,
+              "missionsOverall" : [ {
+                "name" : "Regionalliga Nord",
+                "text" : "23 Spiele"
+              }, {
+                "name" : "L\u00e4nderspiele",
+                "text" : "Kroatien U17: 2 Spiele"
+              } ],
+              "missions" : [ {
+                "name" : "Regionalliga Nord",
+                "text" : "23 Spiele"
+              } ],
+              "goalsOverall" : [ {
+                "name" : "Regionalliga Nord",
+                "text" : "0 Tore"
+              }, {
+                "name" : "L\u00e4nderspieltore",
+                "text" : "Kroatien U17: 0 Tore"
+              } ],
+              "goals" : [ {
+                "name" : "Regionalliga Nord",
+                "text" : "0 Tore"
+              }, {
+                "name" : "Stand",
+                "text" : "01.07.2020"
+              } ],
+              "sortJerseyNum" : "00050"
+            },
+            "position" : 3,
+            "jerseyNumber" : "50",
+            "line" : "2"
+          } ]
+    },
+    "side" : "home",
+    "enabled" : true,
+    "asList" : false
+  },
+  "awayLineup" : {
+    "id" : "5f535f7ea73dbb7e78000345",
+    "formationName" : "4-4-2",
+    "matchId" : "5f219555a838540344e893e5",
+    "teamId" : "5df0823be43ba55e21c35025",
+    "formation" : {
+      "id" : "5df08241e43ba55e21c5aeee",
+      "formationName" : "4-4-2",
+      "positions" : [ {
+        "positionId" : 1,
+        "positionBottom" : 5,
+        "positionLeft" : 50
+      }, {
+        "positionId" : 2,
+        "positionBottom" : 22,
+        "positionLeft" : 20
+      }, {
+        "positionId" : 3,
+        "positionBottom" : 22,
+        "positionLeft" : 40
+      }, {
+        "positionId" : 4,
+        "positionBottom" : 22,
+        "positionLeft" : 60
+      }, {
+        "positionId" : 5,
+        "positionBottom" : 22,
+        "positionLeft" : 80
+      }, {
+        "positionId" : 6,
+        "positionBottom" : 40,
+        "positionLeft" : 50
+      }, {
+        "positionId" : 7,
+        "positionBottom" : 50,
+        "positionLeft" : 15
+      }, {
+        "positionId" : 8,
+        "positionBottom" : 50,
+        "positionLeft" : 85
+      }, {
+        "positionId" : 9,
+        "positionBottom" : 60,
+        "positionLeft" : 50
+      }, {
+        "positionId" : 10,
+        "positionBottom" : 75,
+        "positionLeft" : 33
+      }, {
+        "positionId" : 11,
+        "positionBottom" : 75,
+        "positionLeft" : 66
+      } ]
+    },
+    "players" : {
+      "1" : [ {
+        "player" : {
+          "firstName" : "Michael",
+          "lastName" : "Esser",
+          "birthDate" : "1987-11-22",
+          "weight" : "97",
+          "height" : "198",
+          "jerseyNum" : "31",
+          "joinDate" : "2020-07-30",
+          "leaveDate" : "2020-01-14",
+          "birthPlace" : "Castrop-Rauxel",
+          "nationality" : "Germany",
+          "position" : "Torwart",
+          "id" : "5df0823be43ba55e21c35e64",
+          "providedId" : "84757",
+          "active" : false,
+          "sortJerseyNum" : "00031"
+        },
+        "position" : 1,
+        "jerseyNumber" : "31",
+        "line" : "1"
+      }, {
+        "player" : {
+          "firstName" : "Marcel",
+          "lastName" : "Franke",
+          "birthDate" : "1993-04-05",
+          "weight" : "90",
+          "height" : "193",
+          "jerseyNum" : "28",
+          "joinDate" : "2019-07-01",
+          "birthPlace" : "Dresden",
+          "nationality" : "Germany",
+          "position" : "Abwehr",
+          "id" : "5df0823be43ba55e21c356a6",
+          "providedId" : "93662",
+          "sortJerseyNum" : "00028"
+        },
+        "position" : 5,
+        "jerseyNumber" : "28",
+        "line" : "1"
+      }, {
+        "player" : {
+          "firstName" : "Timo",
+          "lastName" : "H\u00fcbers",
+          "birthDate" : "1996-07-20",
+          "weight" : "82",
+          "height" : "190",
+          "jerseyNum" : "15",
+          "joinDate" : "2016-07-01",
+          "birthPlace" : "Hildesheim",
+          "nationality" : "Germany",
+          "position" : "Abwehr",
+          "id" : "5df0823be43ba55e21c36156",
+          "providedId" : "228528",
+          "active" : false,
+          "sortJerseyNum" : "00015"
+        },
+        "position" : 2,
+        "jerseyNumber" : "15",
+        "line" : "1"
+      }, {
+        "player" : {
+          "firstName" : "Niklas",
+          "lastName" : "Hult",
+          "birthDate" : "1990-02-13",
+          "weight" : "63",
+          "height" : "173",
+          "jerseyNum" : "3",
+          "joinDate" : "2020-08-28",
+          "birthPlace" : "V\u00e4rnamo",
+          "nationality" : "Sweden",
+          "position" : "Abwehr",
+          "id" : "5f4ff83321a113639312bc55",
+          "providedId" : "61795",
+          "sortJerseyNum" : "00003"
+        },
+        "position" : 3,
+        "jerseyNumber" : "3",
+        "line" : "1"
+      }, {
+        "player" : {
+          "firstName" : "Sei",
+          "lastName" : "Muroya",
+          "birthDate" : "1994-04-05",
+          "weight" : "70",
+          "height" : "176",
+          "jerseyNum" : "21",
+          "joinDate" : "2020-08-16",
+          "nationality" : "Japan",
+          "position" : "Abwehr",
+          "id" : "5f4264cb21a113639312ac59",
+          "providedId" : "216505",
+          "sortJerseyNum" : "00021"
+        },
+        "position" : 4,
+        "jerseyNumber" : "21",
+        "line" : "1"
+      }, {
+        "player" : {
+          "firstName" : "Tim",
+          "lastName" : "Walbrecht",
+          "jerseyNum" : "33",
+          "joinDate" : "2020-01-12",
+          "position" : "Mittelfeld",
+          "id" : "5e1b0922a8385403f741f916",
+          "active" : false,
+          "missionsOverall" : [],
+          "missions" : [],
+          "goalsOverall" : [],
+          "goals" : [],
+          "patronages" : [],
+          "sortJerseyNum" : "00033"
+        },
+        "position" : 8,
+        "jerseyNumber" : "33",
+        "line" : "1"
+      }, {
+        "player" : {
+          "firstName" : "Dominik",
+          "lastName" : "Kaiser",
+          "birthDate" : "1988-09-16",
+          "weight" : "69",
+          "height" : "171",
+          "jerseyNum" : "13",
+          "joinDate" : "2020-01-18",
+          "birthPlace" : "Mutlangen",
+          "nationality" : "Germany",
+          "position" : "Mittelfeld",
+          "id" : "5df0823be43ba55e21c3564f",
+          "providedId" : "70017",
+          "sortJerseyNum" : "00013"
+        },
+        "position" : 6,
+        "jerseyNumber" : "13",
+        "line" : "1"
+      }, {
+        "player" : {
+          "firstName" : "Genki",
+          "lastName" : "Haraguchi",
+          "birthDate" : "1991-05-09",
+          "weight" : "68",
+          "height" : "179",
+          "jerseyNum" : "10",
+          "joinDate" : "2018-07-01",
+          "leaveDate" : "2018-01-23",
+          "birthPlace" : "Kumagaya",
+          "nationality" : "Japan",
+          "position" : "Mittelfeld",
+          "id" : "5df0823be43ba55e21c3523b",
+          "providedId" : "54078",
+          "sortJerseyNum" : "00010"
+        },
+        "position" : 9,
+        "jerseyNumber" : "10",
+        "line" : "1"
+      }, {
+        "player" : {
+          "firstName" : "Marvin",
+          "lastName" : "Ducksch",
+          "birthDate" : "1994-03-07",
+          "weight" : "79",
+          "height" : "188",
+          "jerseyNum" : "17",
+          "joinDate" : "2019-07-01",
+          "leaveDate" : "2017-01-11",
+          "birthPlace" : "Dortmund",
+          "nationality" : "Germany",
+          "position" : "Angriff",
+          "id" : "5df0823be43ba55e21c3525b",
+          "providedId" : "118892",
+          "sortJerseyNum" : "00017"
+        },
+        "position" : 7,
+        "jerseyNumber" : "17",
+        "line" : "1"
+      }, {
+        "player" : {
+          "firstName" : "Hendrik",
+          "lastName" : "Weydandt",
+          "birthDate" : "1995-07-16",
+          "weight" : "94",
+          "height" : "195",
+          "jerseyNum" : "9",
+          "joinDate" : "2018-08-01",
+          "birthPlace" : "Gehrden",
+          "nationality" : "Germany",
+          "position" : "Angriff",
+          "id" : "5df0823be43ba55e21c3624a",
+          "providedId" : "230306",
+          "active" : false,
+          "sortJerseyNum" : "00009"
+        },
+        "position" : 11,
+        "jerseyNumber" : "9",
+        "line" : "1"
+      }, {
+        "player" : {
+          "firstName" : "Valmir",
+          "lastName" : "Sulejmani",
+          "birthDate" : "1996-02-01",
+          "weight" : "84",
+          "height" : "185",
+          "jerseyNum" : "19",
+          "joinDate" : "2020-07-21",
+          "leaveDate" : "2015-01-30",
+          "birthPlace" : "Gro\u00dfburgwedel",
+          "nationality" : "Germany",
+          "position" : "Angriff",
+          "id" : "5df0823be43ba55e21c35348",
+          "providedId" : "174658",
+          "sortJerseyNum" : "00019"
+        },
+        "position" : 10,
+        "jerseyNumber" : "19",
+        "line" : "1"
+      } ],
+      "2" : [ {
+        "player" : {
+          "firstName" : "Martin",
+          "lastName" : "Hansen",
+          "birthDate" : "1990-06-15",
+          "weight" : "85",
+          "height" : "188",
+          "jerseyNum" : "25",
+          "joinDate" : "2020-01-21",
+          "leaveDate" : "2018-01-15",
+          "birthPlace" : "Glostrup",
+          "nationality" : "Denmark",
+          "position" : "Unbekannt",
+          "id" : "5df0823be43ba55e21c360ba",
+          "providedId" : "44564",
+          "active" : false,
+          "sortJerseyNum" : "00025"
+        },
+        "position" : 1,
+        "jerseyNumber" : "25",
+        "line" : "2"
+      }, {
+        "player" : {
+          "firstName" : "Baris",
+          "lastName" : "Basdas",
+          "birthDate" : "1990-01-17",
+          "weight" : "80",
+          "height" : "188",
+          "jerseyNum" : "23",
+          "joinDate" : "2020-08-10",
+          "birthPlace" : "Koln",
+          "nationality" : "Germany",
+          "position" : "Abwehr",
+          "id" : "5f4264cb21a113639312ac60",
+          "providedId" : "66662",
+          "sortJerseyNum" : "00023"
+        },
+        "position" : 5,
+        "jerseyNumber" : "23",
+        "line" : "2"
+      }, {
+        "player" : {
+          "firstName" : "Niklas",
+          "lastName" : "Tarnat",
+          "birthDate" : "1998-05-26",
+          "weight" : "74",
+          "height" : "179",
+          "jerseyNum" : "34",
+          "joinDate" : "2019-07-01",
+          "leaveDate" : "2017-08-31",
+          "position" : "Mittelfeld",
+          "id" : "5df0823be43ba55e21c3660e",
+          "providedId" : "225377",
+          "active" : false,
+          "sortJerseyNum" : "00034"
+        },
+        "position" : 6,
+        "jerseyNumber" : "34",
+        "line" : "2"
+      }, {
+        "player" : {
+          "firstName" : "Florent",
+          "lastName" : "Muslija",
+          "birthDate" : "1998-07-06",
+          "weight" : "65",
+          "height" : "172",
+          "jerseyNum" : "35",
+          "joinDate" : "2018-08-31",
+          "leaveDate" : "2018-08-30",
+          "birthPlace" : "Achern",
+          "nationality" : "Germany",
+          "position" : "Mittelfeld",
+          "id" : "5df0823be43ba55e21c36432",
+          "providedId" : "423899",
+          "active" : false,
+          "sortJerseyNum" : "00035"
+        },
+        "position" : 7,
+        "jerseyNumber" : "35",
+        "line" : "2"
+      }, {
+        "player" : {
+          "firstName" : "Franck",
+          "lastName" : "Evina",
+          "birthDate" : "2000-07-05",
+          "height" : "177",
+          "jerseyNum" : "18",
+          "joinDate" : "2020-07-21",
+          "birthPlace" : "Yaound\u00e9",
+          "nationality" : "Cameroon",
+          "position" : "Mittelfeld",
+          "id" : "5df0823be43ba55e21c36612",
+          "providedId" : "225523",
+          "active" : false,
+          "sortJerseyNum" : "00018"
+        },
+        "position" : 3,
+        "jerseyNumber" : "18",
+        "line" : "2"
+      }, {
+        "player" : {
+          "firstName" : "Patrick",
+          "lastName" : "Twumasi",
+          "jerseyNum" : "7",
+          "joinDate" : "2020-09-01",
+          "position" : "Angriff",
+          "id" : "5f53677121a113639312bdf8",
+          "active" : false,
+          "missionsOverall" : [],
+          "missions" : [],
+          "goalsOverall" : [],
+          "goals" : [],
+          "patronages" : [],
+          "sortJerseyNum" : "00007"
+        },
+        "position" : 2,
+        "jerseyNumber" : "7",
+        "line" : "2"
+      }, {
+        "player" : {
+          "firstName" : "Philipp",
+          "lastName" : "Ochs",
+          "birthDate" : "1997-04-17",
+          "weight" : "75",
+          "height" : "175",
+          "jerseyNum" : "20",
+          "joinDate" : "2020-01-31",
+          "leaveDate" : "2020-01-31",
+          "birthPlace" : "Wertheim",
+          "nationality" : "Germany",
+          "position" : "Mittelfeld",
+          "id" : "5df0823be43ba55e21c3536f",
+          "providedId" : "180169",
+          "sortJerseyNum" : "00020"
+        },
+        "position" : 4,
+        "jerseyNumber" : "20",
+        "line" : "2"
+      } ]
+    },
+    "side" : "away",
+    "enabled" : true,
+    "asList" : false
+  },
+  "preReportId" : "208343",
+  "actionGraphic" : {
+    "mobileImageUrl" : null,
+    "tabletImageUrl" : null,
+    "desktopImageUrl" : null,
+    "active" : false,
+    "publishDate" : null
+  },
+  "disableAutoPush" : false,
+  "matchUrl" : "https:\/\/www.werder.de\/de\/matchcenter\/startcenter\/"
+}
